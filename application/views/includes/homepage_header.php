@@ -56,33 +56,58 @@
              </div>
 
                 <ul class="right">  
-                        <li>
-                          <a href="search">Search</a>
+                        <li class="show-for-small">
+                          <?php echo anchor('/search', 'Search'); ?>
                         </li>
-                        <li>
-                           <a href="profile">
+                       
                            <?php 
                        		 $is_logged_in = $this->session->userdata('is_logged_in');
 		                        if ($is_logged_in == true) {
-		                	        	echo	"My Profile</a></li>";
-		                   		} else {
-		       					    	echo "Sign Up</a></li>";
+							echo "<li>";
+		                	        	echo anchor('/profile', 'My Profile');
+							echo "</li>";
+		                   			
+		       					} else {
+								echo "<li>";
+		       					    		echo anchor('/login', 'Sign Up');
+								echo "</li>";	
 		       					}
        					?>
-                        <li ><a class="nice blue button" href="logout"> 
-                        
                         <?php 
                         	$is_logged_in = $this->session->userdata('is_logged_in');
 	                        if ($is_logged_in == true) {
-	                	        	echo	"Logout</a></li>";
+							echo "<li>";				                	       		
+							echo anchor('/logout', 'Logout', array('class' => 'nice blue button'));
+							echo "</li>";
 	                   					
 	       					} else {
-	       					    	echo "Member Login</a></li>";
+							echo "<li>";
+	       					    	echo anchor('/login', 'Member Login', array('class' => 'nice blue button')); 
+							echo "</li>";
 	       					}
        					?>
                 </ul>
         	</div>
      </div>
+
+<div class="container" id="megaDrop" style="display: none;">
+  <div class="mobile-main-nav-padding">
+    <div class="row top">
+
+ <?php 
+                        	$is_logged_in = $this->session->userdata('is_logged_in');
+	                        if ($is_logged_in == true) {
+	                	        	echo	$this->load->view('megadrop_login');
+	                   					
+	       					} else {
+	       					    	echo $this->load->view('megadrop_image');
+	       					}
+ ?>
+  </div>
+  </div>
+</div>
+
+
 
  <?php
   $megadropfile = 'navigation_bar.html';
@@ -111,7 +136,7 @@
                 	}
                 		
                	 ?>
-			    </div>
+		</div>
 
 
         </header>
@@ -121,5 +146,4 @@
         <script src="<?php echo base_url(); ?>system/libraries/zurbs/javascripts/jquery.min.js"></script>
         <script src="<?php echo base_url(); ?>system/libraries/zurbs/javascripts/foundation.js"></script>
         <script src="<?php echo base_url(); ?>system/libraries/zurbs/javascripts/app.js"></script>
-
-
+	<script src="http://www.zurb.com/assets/zurb.mega-drop.js"></script>
