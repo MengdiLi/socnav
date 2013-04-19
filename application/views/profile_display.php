@@ -97,28 +97,81 @@
 	<?php $passwd = ""; ?>
 	<?php $passwd2 = ""; ?>
 	
-		<?php $firstname_input_attr = array('name'=>'firstname', 'value' => ''.$firstname , 'class' => 'input-text blue', 'placeholder'=>'First Name', 'style'=>'width: 386px; height: 40px;'); ?>
-		<?php $lastname_input_attr = array('name'=>'lastname', 'value' => ''.$lastname, 'class' => 'input-text', 'placeholder'=>'Last Name', 'style'=>'width: 386px; height: 40px;'); ?>
-		<?php $email_input_attr = array('name'=>'email', 'value' => ''.$email, 'class' => 'input-text blue',  'placeholder'=>'Email', 'style'=>'width: 386px; height: 40px;') ;?>
+		<?php $firstname_input_attr = array('name'=>'firstname', 'value' => ''.$firstname , 'class' => 'input-text blue', 'placeholder'=>'First Name', 'style'=>'width: 300px; height: 40px;'); ?>
+		<?php $lastname_input_attr = array('name'=>'lastname', 'value' => ''.$lastname, 'class' => 'input-text', 'placeholder'=>'Last Name', 'style'=>'width: 300px; height: 40px;'); ?>
+		<?php $email_input_attr = array('name'=>'email', 'value' => ''.$email, 'class' => 'input-text blue',  'placeholder'=>'Email', 'style'=>'width: 300px; height: 40px;') ;?>
 		<?php $username_input_attr = array('name'=>'username', 'value' => ''.$username, 'class' => 'input-text', 'placeholder'=>'Username', 'style'=>'width: 386px; height: 40px;'); ?>
-		<?php $phone_input_attr = array('name'=>'phonenumber', 'value' => ''.$phone, 'class' => 'input-text', 'placeholder'=>'Phone', 'style'=>'width: 386px; height: 40px;'); ?>
+		<?php $phone_input_attr = array('name'=>'phonenumber', 'value' => ''.$phone, 'class' => 'input-text', 'placeholder'=>'Phone', 'style'=>'width: 300px; height: 40px;'); ?>
 		<?php $gender_attr = array('m'=>'Male', 'f' => 'Female'); ?>
-		<?php $passwd_input_attr = array('name'=>'passwd', 'value' => ''.$passwd, 'class' => 'input-text', 'placeholder'=>'Password', 'style'=>'width: 386px; height: 40px;'); ?>
-		<?php $passwd2_input_attr = array('name'=>'passwd2', 'value' => ''.$passwd2, 'class' => 'input-text', 'placeholder'=>'Confirm Password', 'style'=>'width: 386px; height: 40px;'); ?>
-		<?php $create_button_attr = array('name'=>'create', 'type'=>'submit', 'value' => 'Update Account', 'class'=>'nice small radius blue button', 'style'=>'width: 386px; height: 40px;'); ?>
+		<?php $passwd_input_attr = array('name'=>'passwd', 'value' => ''.$passwd, 'class' => 'input-text', 'placeholder'=>'Password', 'style'=>'width: 300px; height: 40px;'); ?>
+		<?php $passwd2_input_attr = array('name'=>'passwd2', 'value' => ''.$passwd2, 'class' => 'input-text', 'placeholder'=>'Confirm Password', 'style'=>'width: 300px; height: 40px;'); ?>
+		<?php $create_button_attr = array('name'=>'create', 'type'=>'submit', 'value' => 'Update Account', 'class'=>'nice small radius blue button', 'style'=>'width: 400px; height: 40px;'); ?>
 
-	        <?php echo form_input($firstname_input_attr); ?>
-	        <?php echo form_input($lastname_input_attr); ?>
+		  <div class="row">
+		  <div class="three mobile-one columns">
+		  <label class="right inline">First Name</label>	   
+		  </div>
+		  <div class="nine mobile-three columns">     
+		  <?php echo form_input($firstname_input_attr); ?>
+		  </div>
+		  </div>	        
 
-	        <?php echo form_input($email_input_attr);?> 
+		  <div class="row">
+		  <div class="three mobile-one columns">
+		  <label class="right inline">Last Name</label>	   
+		  </div>
+		  <div class="nine mobile-three columns">     
+		  <?php echo form_input($lastname_input_attr); ?>
+		  </div>
+		  </div>
 
-	        <?php echo form_input($phone_input_attr);?>
-	        <?php echo form_password($passwd_input_attr); ?>
-	        <?php echo form_password($passwd2_input_attr); ?>
-	        
-	        <?php echo form_dropdown('gender',$gender_attr, $gender);?>
-	        <?php echo form_submit($create_button_attr); ?>
+		  <div class="row">
+		  <div class="three mobile-one columns">
+		  <label class="right inline">Emaill</label>	   
+		  </div>
+		  <div class="nine mobile-three columns">     
+		  <?php echo form_input($email_input_attr);?> 
+		  </div>
+		  </div>
 
+		  <div class="row">
+		  <div class="three mobile-one columns">
+		  <label class="right inline">Phone NO.</label>	   
+		  </div>
+		  <div class="nine mobile-three columns">     
+		  <?php echo form_input($phone_input_attr);?>
+		  </div>
+		  </div>
+
+		  <div class="row">
+		  <div class="three mobile-one columns">
+		  <label class="right inline">Password</label>	   
+		  </div>
+		  <div class="nine mobile-three columns">     
+		  <?php echo form_password($passwd_input_attr); ?>
+		  </div>
+		  </div>
+
+		  <div class="row">
+		  <div class="three mobile-one columns">
+		  <label class="right inline">ConPassword</label>	   
+		  </div>
+		  <div class="nine mobile-three columns">     
+		  <?php echo form_password($passwd2_input_attr); ?>
+		  </div>
+		  </div>
+
+		  <div class="row">
+		  <div class="three mobile-one columns">
+		  <label class="right inline">Gender</label>	   
+		  </div>
+		  <div class="nine mobile-three columns">     
+		  <?php echo form_dropdown('gender',$gender_attr, $gender);?>
+		  </div>
+		  </div>
+                  <div class="row" style="text-align: center">
+		  <?php echo form_submit($create_button_attr); ?>
+                  </div>
 <?php echo form_fieldset_close(); ?>
 
 <?php echo form_close(); ?>
